@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+<h1>Nova Empresa</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            Nome da Empresa: {{ form.empresa_nome }}
+        </div>
+        <div>
+            Arquivo: {{ form.document }}
+        </div>
+        <button type="submit">Salvar</button>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block title %}
+            <title>Sistema de Vendas</title>
+        {% endblock title %}
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    </head>
+    <body>
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href="{% url 'vendas:empresas' %}">Empresa</a>
+                </li>
+                <li>
+                   <a href="{% url 'vendas:produtos' %}">Vendas</a>
+                </li>
+            </ul>
+        </div>
+        {% if upload_message %}
+        <div>
+            {{ upload_message }}
+        </div>
+        {% endif %}
+        {% block content %}
+
+        {% endblock content %}
+    </body>
+</html>

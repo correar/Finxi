@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+<h1>EMPRESA</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<ul>
+    <li>
+        <a href="{% url 'vendas:empresa' %}">Nova Empresa</a>
+    </li>
+</ul>
+<table>
+    <tr>
+        <th>
+            Empresa
+        </th>
+        <th>
+            Arquivo
+        </th>
+    </tr>
+{% for empresa in empresas %}
+    <tr><td>{{ empresa.empresa_nome }}</td><td>{{ empresa.document }}</td></tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}
